@@ -14,7 +14,7 @@ export default function Weather(props) {
       wind: response.data.wind.speed,
        date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
-      iconUrl: "http://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
+      iconUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
       city: response.data.name
     })
   }
@@ -75,7 +75,7 @@ export default function Weather(props) {
     )
   } else {
     const apikey = "5f472b7acba333cd8a035ea85a0d4d4c"
-    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apikey}&units=metric`
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apikey}&units=metric`
     axios.get(apiUrl).then(handleResponse)
 
     return "loading..."
